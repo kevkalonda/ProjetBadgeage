@@ -1,24 +1,18 @@
 package com.entities;
 
-import javax.persistence.DiscriminatorValue;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import javax.persistence.OneToOne;
-
 import lombok.Data;
+
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 
 @Entity
 @Data
-@DiscriminatorValue("R")
-
-public class Responsable extends Utilisateur {
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
-	
-	@OneToOne
-	private Composante composante;
-
+@DiscriminatorColumn(name = "R")
+public class Responsable extends Utilisateur{
+    /**
+     * association avec la table composante
+     */
+    @OneToOne
+    private Composante est_Rattache_A;
 }

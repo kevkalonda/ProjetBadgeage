@@ -1,19 +1,16 @@
 package com.entities;
 
+import lombok.Data;
+
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-
-import lombok.Data;
+import javax.persistence.OneToMany;
+import java.util.List;
 
 @Entity
 @Data
-@DiscriminatorValue("G")
+@DiscriminatorColumn(name = "G")
 public class Gestionnaire extends Utilisateur{
 
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long Id;
-	
 }
