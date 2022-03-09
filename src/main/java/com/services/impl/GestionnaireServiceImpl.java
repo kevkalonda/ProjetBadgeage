@@ -4,6 +4,8 @@ import com.dtos.GestionnaireDto;
 import com.entities.Gestionnaire;
 import com.repositories.GestionnaireRepository;
 import com.services.GestionnaireService;
+
+import org.hibernate.internal.build.AllowSysOut;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
@@ -71,6 +73,16 @@ public class GestionnaireServiceImpl implements GestionnaireService {
         });
         return gestionnaireDtoList;
     }
+    
+    /**
+     * catte methode modifie le gestionnaire
+     */
+	@Override
+	public boolean modifierGestionnaire(GestionnaireDto gestionnaireDto) {
+		
+		this.enregistrerGestionnaire(gestionnaireDto);
+		return true;
+	}
 
 
 

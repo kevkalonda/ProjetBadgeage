@@ -54,4 +54,10 @@ public class Filiere_LangueServiceImpl implements Filiere_LangueService {
         return filiere_langueDtos;
     }
 
+	@Override
+	public boolean modifierFiliereLangue(Filiere_LangueDto filiere_langueDto) {
+		this.enregistrerFiliereLangue(filiere_langueDto);
+		return true;
+	}
+
 }

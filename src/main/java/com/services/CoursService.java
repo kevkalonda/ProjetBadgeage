@@ -31,4 +31,10 @@ public interface CoursService {
      * @return
      */
     List<CoursDto> obtenirTousLesCours();
+    /**
+     * 
+     * @param coursDto
+     * @return
+     */
+    boolean modifierCours(CoursDto coursDto);
 }

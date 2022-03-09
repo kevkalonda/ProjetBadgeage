@@ -16,8 +16,51 @@ public class Creneau {
     private int duree;
     private Type_seanceDto type;
     private LocalDate date_heure;
-    @OneToMany(mappedBy = "Id")
+    
+    
+    @OneToMany(mappedBy = "est_Planifie_sur")
     private List<Seance_Formation> seanceFormationList;
-    @OneToOne
+    
+    
+    @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn (name="cours_id",referencedColumnName="Id",nullable=false)
     private Cours cours;
+    
+    
+	public Long getId() {
+		return Id;
+	}
+	public void setId(Long id) {
+		Id = id;
+	}
+	public int getDuree() {
+		return duree;
+	}
+	public void setDuree(int duree) {
+		this.duree = duree;
+	}
+	public Type_seanceDto getType() {
+		return type;
+	}
+	public void setType(Type_seanceDto type) {
+		this.type = type;
+	}
+	public LocalDate getDate_heure() {
+		return date_heure;
+	}
+	public void setDate_heure(LocalDate date_heure) {
+		this.date_heure = date_heure;
+	}
+	public List<Seance_Formation> getSeanceFormationList() {
+		return seanceFormationList;
+	}
+	public void setSeanceFormationList(List<Seance_Formation> seanceFormationList) {
+		this.seanceFormationList = seanceFormationList;
+	}
+	public Cours getCours() {
+		return cours;
+	}
+	public void setCours(Cours cours) {
+		this.cours = cours;
+	}
 }

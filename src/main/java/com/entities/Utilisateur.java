@@ -21,7 +21,43 @@ public class Utilisateur {
     private Long Id;
     private String login;
     private String motDePasse;
-    private String nomUsuel;
+    private String nom_usuel;
     private String prenom;
     private String mail;
+	public Long getId() {
+		return Id;
+	}
+	public void setId(Long id) {
+		Id = id;
+	}
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		this.login = login;
+	}
+	public String getMotDePasse() {
+		return motDePasse;
+	}
+	public void setMotDePasse(String motDePasse) {
+		this.motDePasse = motDePasse;
+	}
+	public String getNomUsuel() {
+		return nom_usuel;
+	}
+	public void setNomUsuel(String nomUsuel) {
+		this.nom_usuel = nomUsuel;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+	public String getMail() {
+		return mail;
+	}
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
 }

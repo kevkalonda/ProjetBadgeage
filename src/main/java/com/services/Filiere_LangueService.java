@@ -31,4 +31,10 @@ public interface Filiere_LangueService {
      * @return
      */
     List<Filiere_LangueDto> obtenirToutesLesFilieresLangues();
+    /**
+     * 
+     * @param filiere_langueDto
+     * @return
+     */
+    boolean modifierFiliereLangue(Filiere_LangueDto filiere_langueDto);
 }

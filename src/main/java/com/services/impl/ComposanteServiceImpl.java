@@ -57,4 +57,10 @@ public class ComposanteServiceImpl implements ComposanteService {
         return composanteDtoList;
     }
 
+	@Override
+	public boolean modifierComposante(ComposanteDto composanteDto) {
+		this.enregistrerComposante(composanteDto);
+		return true;
+	}
+
 }

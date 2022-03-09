@@ -17,12 +17,57 @@ public class Filiere_Langue {
     /**
      * association avec la table composante
      */
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn (name="depend_De",referencedColumnName="Id",nullable=false)
     private Composante depend_De;
 
     /**
      * association avec la table cours
      */
-    @OneToMany(mappedBy = "Id")
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinTable(name = "filiere_cours",
+            joinColumns = {
+                    @JoinColumn(name = "filiere_langue_id", referencedColumnName = "Id", updatable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "cours_id", referencedColumnName = "Id", updatable = false)})
     private List<Cours> coursList;
+
+	public Long getId() {
+		return Id;
+	}
+
+	public void setId(Long id) {
+		Id = id;
+	}
+
+	public String getCodeFiliereLangue() {
+		return codeFiliereLangue;
+	}
+
+	public void setCodeFiliereLangue(String codeFiliereLangue) {
+		this.codeFiliereLangue = codeFiliereLangue;
+	}
+
+	public String getNomFiliereLangue() {
+		return nomFiliereLangue;
+	}
+
+	public void setNomFiliereLangue(String nomFiliereLangue) {
+		this.nomFiliereLangue = nomFiliereLangue;
+	}
+
+	public Composante getDepend_De() {
+		return depend_De;
+	}
+
+	public void setDepend_De(Composante depend_De) {
+		this.depend_De = depend_De;
+	}
+
+	public List<Cours> getCoursList() {
+		return coursList;
+	}
+
+	public void setCoursList(List<Cours> coursList) {
+		this.coursList = coursList;
+	}
 }

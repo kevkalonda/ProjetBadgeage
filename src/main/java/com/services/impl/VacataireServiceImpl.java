@@ -76,6 +76,12 @@ public class VacataireServiceImpl implements VacataireService {
         return vacataireDtos;
     }
 
+	@Override
+	public boolean modifierVacataire(VacataireDto vacataireDto) {
+		this.enregistrerVacataire(vacataireDto);
+		return true;
+	}
+
 
 
 

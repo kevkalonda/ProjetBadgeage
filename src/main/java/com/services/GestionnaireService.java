@@ -31,4 +31,10 @@ public interface GestionnaireService {
      * @return
      */
     List<GestionnaireDto> obtenirTousLesGestionnaires();
+    /**
+     * 
+     * @param gestionnaireDto
+     * @return
+     */
+    boolean modifierGestionnaire(GestionnaireDto gestionnaireDto);
 }

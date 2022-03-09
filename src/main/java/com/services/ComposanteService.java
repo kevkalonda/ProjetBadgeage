@@ -1,6 +1,7 @@
 package com.services;
 
 import com.dtos.ComposanteDto;
+import com.dtos.VacataireDto;
 
 import java.util.List;
 
@@ -31,4 +32,6 @@ public interface ComposanteService {
      * @return
      */
     List<ComposanteDto> obtenirToutLesComposantes();
+    
+    boolean modifierComposante(ComposanteDto composanteDto);
 }

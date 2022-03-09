@@ -1,5 +1,6 @@
 package com.services;
 
+import com.dtos.GestionnaireDto;
 import com.dtos.ResponsableDto;
 import com.dtos.VacataireDto;
 
@@ -32,4 +33,10 @@ public interface VacataireService {
      * @return
      */
     List<VacataireDto> obtenirTousLesVacataires();
+    /**
+     * 
+     * @param vacataireDto
+     * @return
+     */
+    boolean modifierVacataire(VacataireDto vacataireDto);
 }

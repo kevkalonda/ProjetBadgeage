@@ -49,4 +49,10 @@ public class CoursServiceImpl implements CoursService {
         return coursDtoList;
     }
 
+	@Override
+	public boolean modifierCours(CoursDto coursDto) {
+		this.enregistrerCours(coursDto);
+		return true;
+	}
+
 }
